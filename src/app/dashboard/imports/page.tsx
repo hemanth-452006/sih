@@ -474,13 +474,13 @@ DIT-2024-ERR1,,MissingName,,2005-99-99,Male,invalid-email,+91 90000 00000,B.Tech
                     <TableRow key={r.rowNumber} className={!r.isValid ? "bg-red-50/30" : ""}>
                       <TableCell className="font-mono text-xs">{r.rowNumber}</TableCell>
                       <TableCell className="font-mono text-xs font-bold text-slate-900">
-                        {r.data.internalId || "<Missing>"}
+                        {String(r.data.internalId ?? "<Missing>")}
                       </TableCell>
                       <TableCell className="text-xs font-semibold text-slate-800">
-                        {r.data.firstName || "<Missing>"} {r.data.lastName || ""}
+                        {String(r.data.firstName ?? "<Missing>")} {String(r.data.lastName ?? "")}
                       </TableCell>
                       <TableCell className="font-mono text-xs text-slate-600">
-                        {r.data.apaarId || "None"}
+                        {String(r.data.apaarId ?? "None")}
                       </TableCell>
                       <TableCell>
                         {r.isValid ? (
